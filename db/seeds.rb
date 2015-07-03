@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+group = ExamGroup.create(name: '数学')
+Member.create(exam_group_id: group.id, name: '芥川 和雄', study: '微分幾何,幾何解析・大域解析')
