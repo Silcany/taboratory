@@ -1,0 +1,9 @@
+<header class="jumbotron">
+  <div class="container text-center">
+    <h1><%= @member.name %> 研究室</h1>
+    <p><%= @member.study %></p>
+    <% if @member.homepage_url %>
+      <p><a class="btn btn-lg learn-more" role="button" href="<%= @member.homepage_url %>">偵察する &raquo;</a></p>
+    <% end %>
+  </div>
+</header>

@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :voices
 
+  scope :members do
+    get '/:id' => 'members#show'
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
