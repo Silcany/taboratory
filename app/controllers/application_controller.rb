@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   before_filter :authorize
 
   def authorize
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
+    if session[:user_id] && user = User.find_by_id(session[:user_id])
+      @current_user = user
     else
       user = User.create
       @current_user = user
