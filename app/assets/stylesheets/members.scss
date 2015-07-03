@@ -1,6 +1,7 @@
 // Place all the styles related to the members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass";
 
 header.laboratory-jumbotron {
   background: url("/images/laboratory.png");
@@ -16,6 +17,8 @@ header.laboratory-jumbotron .learn-more {
 }
 
 header.laboratory-jumbotron .learn-more:hover {
-  color: #0089ff;
-  border-color: #0089ff;
+  color: #CCC;
+  border-color: #CCC;
+  background-color: rgba(0, 0, 0, 0.3);
+  @include box-shadow(1px 1px 5px #999);
 }
