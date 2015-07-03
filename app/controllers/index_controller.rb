@@ -6,6 +6,7 @@ class IndexController < ApplicationController
     @groups = ExamGroup.find_by_sql([
       'SELECT exam_groups.*, COUNT(exam_groups.id) AS members_count FROM exam_groups
        JOIN members on exam_groups.id = members.exam_group_id
-       GROUP BY exam_groups.id'])
+       GROUP BY exam_groups.id
+       ORDER BY exam_groups.id'])
   end
 end
