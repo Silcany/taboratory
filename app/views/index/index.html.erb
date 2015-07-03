@@ -47,7 +47,7 @@
   <h1>時は戦国。各研究所が覇を争う時代。</h1>
 
   <% @members.each do |member| %>
-    <div id='user_inf_window'>
+    <div id='user_inf_window' class='<%= "good_member_inf" if member.score > 0 %> <%= "bad_member_inf" if member.score < 0 %>'>
       <%= link_to '', controller: 'members', action: 'show', id: member.id %>
       <div id='thumbnail'>
         <span id="thumbnail_image" style="background-image: url(/images/thumbnail.jpg)"></span>

@@ -5,6 +5,23 @@ class Member < ActiveRecord::Base
   belongs_to :exam_group
   has_many :thinks
 
+  def self.order_by_score
+    member_ids = Hash.new(0)
+    Think.group(:member_id, :good).count(:member_id, :good).each do |member_id_good, count|
+      if member_id_good.last
+        member_ids[member_id_good.first] += count
+      else
+        member_ids[member_id_good.first] -= count
+      end
+    end
+
+    member_ids.sort_by{|_, score| score}.map(&:first)
+  end
+
+  def score
+    thinks.where(good: true).count - thinks.where(good: false).count
+  end
+
   def homepage_url
     return url if url
 
