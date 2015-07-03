@@ -2,20 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header.jumbotron {
+header.laboratory-jumbotron {
   background: url("/images/laboratory.png");
   background-position: center center;
   background-size: cover;
   color: #fff;
 }
 
-header .learn-more {
+header.laboratory-jumbotron .learn-more {
   border: 1px solid #fff;
   color: #fff;
   border-radius: 0;
 }
 
-header .learn-more:hover {
+header.laboratory-jumbotron .learn-more:hover {
   color: #0089ff;
   border-color: #0089ff;
 }

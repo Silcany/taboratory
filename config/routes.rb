@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     get '/:id' => 'members#show'
   end
 
+  scope :exam_groups do
+    get '/:id' => 'exam_groups#show'
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
