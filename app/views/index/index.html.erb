@@ -39,16 +39,17 @@
 
   <h1>時は戦国。各研究所が覇を争う時代。</h1>
 
-  <div id='user_inf_window'>
-    <div id='thumbnail'>
-      <span id="thumbnail_image" style="background-image: url(/images/miharu.png)"></span>
+  <% @members.each do |member| %>
+    <div id='user_inf_window'>
+      <%= link_to '', controller: 'members', action: 'show', id: member.id %>
+      <div id='thumbnail'>
+        <span id="thumbnail_image" style="background-image: url(/images/thumbnail.jpg)"></span>
+      </div>
+      <div id='user_inf'>
+        <div id='name'><%= member.name %></div>
+      </div>
     </div>
-    <div id='user_inf'>
-      <div id='name'>天枷研究所</div>
-    </div>
-  </div>
+  <% end %>
 
   <br><br>
 <br><br>
-
-https://twitter.com/noterara
