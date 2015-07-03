@@ -14,7 +14,9 @@ end
 gem 'bootstrap3-rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '5.0.1'
+gem 'compass', '1.0.3'
+gem 'compass-rails', '2.0.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

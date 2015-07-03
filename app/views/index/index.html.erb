@@ -37,12 +37,16 @@
     <%= image_tag("miharu_active.jpg") %>
   </div>
 
+  <div id='user_inf_window'>
+    <div id='thumbnail'>
+      <span id="thumbnail_image" style="background-image: url(/images/miharu.png)"></span>
+    </div>
+    <div id='user_inf'>
+      <div id='name'>天枷研究所</div>
+    </div>
+  </div>
+
   <br><br>
-
-<% @members.each do |member| %>
-  <%= member.name %>:<%= member.study %><br>
-<% end %>
-
 <br><br>
 
 https://twitter.com/noterara
