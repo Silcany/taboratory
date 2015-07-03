@@ -1,3 +1,22 @@
+<style>
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  img {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+</style>
+
+
 東工大研究室
 
 <a href="http://www.titech.ac.jp/graduate_school/news/pdf/H2804_bosyuyoko_master54967.pdf">
@@ -5,5 +24,20 @@
     大学院修士課程 平成28年　4月入学
 
   </a>
+
+  <br>
+
+  <div class='dialog'>
+    <h1>いま食事中です</h1>
+    <%= image_tag("miharu_eat.jpg") %>
+  </div>
+
+  <br><br>
+
+<% @members.each do |member| %>
+  <%= member.name %>:<%= member.study %><br>
+<% end %>
+
+<br><br>
 
 https://twitter.com/noterara
