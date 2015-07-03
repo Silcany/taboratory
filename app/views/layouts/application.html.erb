@@ -30,14 +30,20 @@
 
   </div>
 
-  <div class="footer navbar-fixed-bottom">
-    <div class="footer-arrow">
+  <div id="footer" class="navbar-fixed-bottom">
+    <div id="footer-arrow" class="operator-hide">
       <%= image_tag("arrow.jpg") %>
     </div>
 
     <div class="container text-center">
       Created by Team Silca
     </div>
+
+    <br>
+
+    <% @groups.each do |group| %>
+      <%= link_to group.name, controller: 'exam_groups', action: 'show', id: group.id %>
+    <% end %>
   </div>
 </body>
 </html>

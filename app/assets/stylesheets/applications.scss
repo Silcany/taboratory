@@ -7,14 +7,16 @@
   min-height: 40px;
 }
 
-.footer {
+#footer {
+  min-height: 20px;
   border-top: 1px solid rgba(204,204,204,0.6);
+  background-color: #FAFAFA;
 
-  .footer-arrow {
+  #footer-arrow {
     position: absolute;
+    top: -50px;
     left: 0;
     right: 0;
-    bottom: 29px;
     margin: auto;
     width: 50px;
     height: 50px;
