@@ -17,33 +17,13 @@
 </script>
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
-  </div>
-  </nav>
 
-  <div class="container" id="main-container">
+  <%= yield %>
 
-    <div id="contents">
-      <%= yield %>
-    </div>
-
-  </div>
-
-  <div id="footer" class="navbar-fixed-bottom">
-    <div id="footer-arrow" class="operator-hide">
-      <%= image_tag("arrow.jpg") %>
-    </div>
-
+  <div id="site-footer">
     <div class="container text-center">
       Created by Team Silca
     </div>
-
-    <br>
-
-    <% @groups.each do |group| %>
-      <%= link_to group.name, controller: 'exam_groups', action: 'show', id: group.id %>
-    <% end %>
   </div>
 </body>
 </html>

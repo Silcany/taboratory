@@ -3,6 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "compass";
 
+#footer {
+  min-height: 20px;
+  border-top: 1px solid rgba(204,204,204,0.6);
+  background-color: #FAFAFA;
+
+  #footer-arrow {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-top: 1px solid rgba(204,204,204,0.6);
+    border-left: 1px solid rgba(204,204,204,0.6);
+    border-right: 1px solid rgba(204,204,204,0.6);
+    @include border-radius(20px 20px 0px 0px);
+    background-color: #FAFAFA;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 40px;
+      height: 40px;
+      @include border-radius(20px 20px 0px 0px);
+    }
+  }
+}
+
 #user_inf_window{
   position: relative;
   width: 275px;

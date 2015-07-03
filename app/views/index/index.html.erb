@@ -17,6 +17,13 @@
 </style>
 
 
+<nav class="navbar navbar-default navbar-static-top">
+<div class="container-fluid">
+</div>
+</nav>
+
+<div class="container">
+
 東工大研究室
 
 <a href="http://www.titech.ac.jp/graduate_school/news/pdf/H2804_bosyuyoko_master54967.pdf">
@@ -51,5 +58,17 @@
     </div>
   <% end %>
 
-  <br><br>
-<br><br>
+</div>
+
+
+<div id="footer" class="navbar-fixed-bottom">
+  <div id="footer-arrow" class="operator-hide">
+    <%= image_tag("arrow.jpg") %>
+  </div>
+
+  <br>
+
+  <% @groups.each do |group| %>
+    <%= link_to group.name, controller: 'exam_groups', action: 'show', id: group.id %>
+  <% end %>
+</div>
