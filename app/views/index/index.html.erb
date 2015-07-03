@@ -27,6 +27,11 @@
 
   <br>
 
+  <%= form_for(@voice) do |f| %>
+    <p>このサイトについての意見はこちら</p>
+    <%= f.text_field :t %>
+  <% end %>
+
   <div class='dialog'>
     <h1>いま食事中です</h1>
     <%= image_tag("miharu_eat.jpg") %>
