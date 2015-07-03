@@ -21,8 +21,13 @@
   <%= yield %>
 
   <div id="site-footer">
-    <div class="container text-center">
-      <%= link_to image_tag("arrow.jpg", id: 'top-link-image'), root_path %>
+    <div class="container">
+      <div class="text-center">
+        <%= link_to image_tag("arrow.jpg", id: 'top-link-image'), root_path %>
+      </div>
+      <div class="pull-right">
+        Created by <%= link_to 'Silva', 'https://twitter.com/noterara' %> and Team Silca
+      </div>
     </div>
   </div>
 </body>
