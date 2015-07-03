@@ -72,7 +72,7 @@
     <% @groups.each do |group| %>
       <div class="exam_group">
         <%= link_to controller: 'exam_groups', action: 'show', id: group.id do %>
-          <%= group.name %><span class="badge"><%= group.members.count %></span>
+          <%= group.name %><span class="badge"><%= group.members_count %></span>
         <% end %>
       </div>
     <% end %>
