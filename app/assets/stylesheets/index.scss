@@ -5,6 +5,7 @@
 
 #footer {
   min-height: 20px;
+  padding-bottom: 15px;
   border-top: 1px solid rgba(204,204,204,0.6);
   background-color: #FAFAFA;
 
@@ -33,6 +34,15 @@
       width: 40px;
       height: 40px;
       @include border-radius(20px 20px 0px 0px);
+    }
+  }
+
+  .exam_group {
+    margin: 5px;
+    float: left;
+
+    span {
+      margin: 0 1px;
     }
   }
 }

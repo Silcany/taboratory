@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(->
-  $('#footer').css('bottom', (20 - $('#footer').height()) + 'px')
+  $('#footer').css('bottom', (5 - $('#footer').height()) + 'px')
 
   $(document).on('click', '#footer-arrow.operator-hide', ->
     $('#footer').animate({'bottom':'0px'}, 200)
@@ -18,7 +18,7 @@ $(->
     return false
   )
   $(document).on('click', '#footer-arrow.operator-show', ->
-    $('#footer').animate({'bottom':(20 - $('#footer').height()) + 'px'}, 200)
+    $('#footer').animate({'bottom':(5 - $('#footer').height()) + 'px'}, 200)
     $('#footer-arrow img').animate({zIndex:1},{
       duration: 200,
       step: (now) ->

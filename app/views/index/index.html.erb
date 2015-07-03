@@ -68,7 +68,13 @@
 
   <br>
 
-  <% @groups.each do |group| %>
-    <%= link_to group.name, controller: 'exam_groups', action: 'show', id: group.id %>
-  <% end %>
+  <div class="container">
+    <% @groups.each do |group| %>
+      <div class="exam_group">
+        <%= link_to controller: 'exam_groups', action: 'show', id: group.id do %>
+          <%= group.name %><span class="badge"><%= group.members.count %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
