@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   scope :members do
     get '/:id' => 'members#show'
+    get '/:id/good' => 'members#good'
+    get '/:id/bad' => 'members#bad'
   end
 
   scope :exam_groups do

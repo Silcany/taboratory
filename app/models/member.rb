@@ -3,6 +3,7 @@ require 'nokogiri'
 
 class Member < ActiveRecord::Base
   belongs_to :exam_group
+  has_many :thinks
 
   def homepage_url
     return url if url

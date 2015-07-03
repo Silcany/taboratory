@@ -12,28 +12,48 @@
 
 
 <div class="progress">
-  <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 35%"></div>
-  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 65%"></div>
+  <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: <%= @good_percent %>%"></div>
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: <%= 100 - @good_percent %>%"></div>
 </div>
 
 <div class="row">
-  <div class="col-xs-1"></div>
-  <div class="col-xs-4">
-    <a href="#" class="thumbnail">
-      <%= image_tag("miharu_sleep.jpg") %>
-      <div class="caption text-center">
-        <h3>GOOD</h3>
+  <% if @think %>
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+      <div href="#" class="thumbnail">
+        <% if @think.good %>
+          <%= image_tag("good.jpg") %>
+          <div class="caption text-center">
+            <h3>GOOD</h3>
+          </div>
+        <% else %>
+          <%= image_tag("bad.jpg") %>
+          <div class="caption text-center">
+            <h3>BAD</h3>
+          </div>
+        <% end %>
       </div>
-    </a>
-  </div>
-  <div class="col-xs-2"></div>
-  <div class="col-xs-4">
-    <a href="#" class="thumbnail">
-      <%= image_tag("miharu_sleep.jpg") %>
-      <div class="caption text-center">
-        <h3>BAD</h3>
-      </div>
-    </a>
-  </div>
-  <div class="col-xs-1"></div>
+    </div>
+    <div class="col-xs-4"></div>
+  <% else %>
+    <div class="col-xs-1"></div>
+    <div class="col-xs-4">
+      <%= link_to({controller: 'members', action: 'good'}, {class: 'thumbnail'}) do %>
+        <%= image_tag("good.jpg") %>
+        <div class="caption text-center">
+          <h3>GOOD</h3>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-4">
+      <%= link_to({controller: 'members', action: 'bad'}, {class: 'thumbnail'}) do %>
+        <%= image_tag("bad.jpg") %>
+        <div class="caption text-center">
+          <h3>BAD</h3>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-xs-1"></div>
+  <% end %>
 </div>
