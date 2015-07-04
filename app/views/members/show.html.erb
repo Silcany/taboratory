@@ -26,10 +26,28 @@
           <div class="caption text-center">
             <h3>GOOD</h3>
           </div>
+          <div class="caption text-center">
+            <h4>なぜ？</h4>
+            <%= form_for(@to_member_comment, html: {class: 'input-group'}, url: {action: 'comment'}) do |f| %>
+              <%= f.text_field :t, class: "form-control" %>
+              <span class="input-group-btn">
+                <%= f.submit "コメント", class: "btn btn-default" %>
+              </span>
+            <% end %>
+          </div>
         <% else %>
           <%= image_tag("bad.jpg") %>
           <div class="caption text-center">
             <h3>BAD</h3>
+          </div>
+          <div class="caption text-center">
+            <h4>なぜ？</h4>
+            <%= form_for(@to_member_comment, html: {class: 'input-group'}, url: {action: 'comment'}) do |f| %>
+              <%= f.text_field :t, class: "form-control" %>
+              <span class="input-group-btn">
+                <%= f.submit "コメント", class: "btn btn-default" %>
+              </span>
+            <% end %>
           </div>
         <% end %>
       </div>
@@ -56,4 +74,24 @@
     </div>
     <div class="col-xs-1"></div>
   <% end %>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-6">
+    <ul class="list-group">
+      <% @member.to_member_comments.order('updated_at DESC').each do |comment| %>
+        <% if comment.good %>
+          <li class="list-group-item list-group-item-info"><%= comment.t %></li>
+        <% else %>
+          <li class="list-group-item list-group-item-danger"><%= comment.t %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-xs-4"></div>
+</div>
+
+
 </div>

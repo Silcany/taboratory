@@ -1,7 +1,8 @@
 class MembersController < ApplicationController
   def show
-    @member = Member.find(params[:id])
+    @member = Member.includes(:to_member_comments).find(params[:id])
     @think = Think.find_by_user_id_and_member_id(@current_user.id, params[:id])
+    @to_member_comment = ToMemberComment.new
 
     good_count = @member.thinks.where(good: true).count
     all_count = @member.thinks.count
@@ -29,6 +30,12 @@ class MembersController < ApplicationController
       Think.create(user_id: @current_user.id, member_id: params[:id], good: false)
     end
 
+    redirect_to action: 'show'
+  end
+
+  def comment
+    think = Think.find_by_user_id_and_member_id(@current_user.id, params[:id])
+    ToMemberComment.create(member_id: params[:id], t: params[:to_member_comment][:t], good: think.good)
     redirect_to action: 'show'
   end
 end

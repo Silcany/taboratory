@@ -24,28 +24,14 @@
 
 <div class="container">
 
-東工大研究室
-
-<a href="http://www.titech.ac.jp/graduate_school/news/pdf/H2804_bosyuyoko_master54967.pdf">
-
-    大学院修士課程 平成28年　4月入学
-
-  </a>
-
-  <br>
-
-  <%= form_for(@voice) do |f| %>
-    <p>このサイトについての意見はこちら</p>
-    <%= f.text_field :t %>
-  <% end %>
-
   <div class='dialog'>
-    <h1>いま寝てます。研究室のGood/Badを評価してみてね。</h1>
-    <%= image_tag("miharu_sleep.jpg") %>
+    <h1>順次機能追加中だよ！</h1>
+    <%= image_tag("miharu_2.jpg") %>
   </div>
 
   <h1>時は戦国。各研究所が覇を争う時代。</h1>
 
+  <div style="overflow:hidden;">
   <% @members.each do |member| %>
     <div id='user_inf_window' class='<%= "good_member_inf" if member.score > 0 %> <%= "bad_member_inf" if member.score < 0 %>'>
       <%= link_to '', controller: 'members', action: 'show', id: member.id %>
@@ -56,6 +42,15 @@
         <div id='name'><%= member.name %></div>
       </div>
     </div>
+  <% end %>
+  </div>
+
+
+  <a href="http://www.titech.ac.jp/graduate_school/news/pdf/H2804_bosyuyoko_master54967.pdf">大学院修士課程 平成28年　4月入学[PDF]</a>
+
+  <%= form_for(@voice) do |f| %>
+    <p>このサイトについての意見はこちら</p>
+    <%= f.text_field :t %>
   <% end %>
 
 </div>

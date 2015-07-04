@@ -4,6 +4,7 @@ require 'nokogiri'
 class Member < ActiveRecord::Base
   belongs_to :exam_group
   has_many :thinks
+  has_many :to_member_comments
 
   def self.order_by_score
     member_ids = Hash.new(0)

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/:id' => 'members#show'
     get '/:id/good' => 'members#good'
     get '/:id/bad' => 'members#bad'
+    post '/:id/comment' => 'members#comment'
   end
 
   scope :exam_groups do
